@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('regis')
+@section('content')
     @include('component.register.regis')
 @endsection
 

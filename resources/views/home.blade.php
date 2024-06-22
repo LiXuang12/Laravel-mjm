@@ -1,4 +1,4 @@
 @extends('layout.main')
-@section('container')
-    <p>dashboard</p>
+@section('content')
+   
 @endsection

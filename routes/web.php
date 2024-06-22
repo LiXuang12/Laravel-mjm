@@ -7,7 +7,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/authlogin', [AuthController::class, 'login'])->name('authlogin');
 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/authregister', [AuthController::class, 'register'])->name('authregister');
 
 // Route::get('/dashboard', function(){
 //     return view('dashboard');
@@ -28,3 +28,10 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/project', function () {
+    return view('content.project');
+});
+
+Route::get('/calendar', function () {
+    return view('content.calendar');
+});

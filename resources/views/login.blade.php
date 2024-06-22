@@ -1,4 +1,4 @@
 @extends('layout.main')
-@section('login')
+@section('content')
     @include('component.login.log')
 @endsection

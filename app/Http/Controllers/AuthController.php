@@ -62,14 +62,20 @@ class AuthController extends Controller
 
      
         $user = new UserMjm();
-        $user->username = $validatedData['username'];
+        $user->username = $validatedData['name'];
         $user -> email = $validatedData['email'];
         $user->password = Hash::make($validatedData['password']);
+
         $user->save();
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect()->intended('login');
+        return redirect()->route('login');
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+
     }
 
     public function logout(Request $request)
